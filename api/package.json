@@ -1,0 +1,35 @@
+{
+  "name": "web-worker-api",
+  "version": "1.0.0",
+  "description": "A background worker allocation, scheduling and management api",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aytida0/web-worker.git"
+  },
+  "keywords": [
+    "background",
+    "worker",
+    "job-scheduling",
+    "management"
+  ],
+  "author": "aditya",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aytida0/web-worker/issues"
+  },
+  "homepage": "https://github.com/aytida0/web-worker#readme",
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.840.0",
+    "@aws-sdk/lib-dynamodb": "^3.844.0",
+    "dotenv": "^17.1.0",
+    "express": "^5.1.0",
+    "nanoid": "^5.1.5",
+    "nodemon": "^3.1.10"
+  }
+}

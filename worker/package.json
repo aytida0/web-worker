@@ -1,0 +1,21 @@
+{
+  "name": "web-worker-poll",
+  "version": "1.0.0",
+  "description": "picks pending tasks and process it",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "long-polling",
+    "task-processor"
+  ],
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.840.0",
+    "@aws-sdk/lib-dynamodb": "^3.844.0",
+    "dotenv": "^17.1.0"
+  },
+  "author": "aditya",
+  "license": "MIT"
+}
