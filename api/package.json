@@ -27,6 +27,7 @@
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.840.0",
     "@aws-sdk/lib-dynamodb": "^3.844.0",
+    "@azure/service-bus": "^7.x",
     "dotenv": "^17.1.0",
     "express": "^5.1.0",
     "nanoid": "^5.1.5",

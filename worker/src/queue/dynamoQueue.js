@@ -46,7 +46,7 @@ const getFailedTasks = async () => {
     const response = await docClient.send(command);
     return response.Items;
 }
-
+ 
 const updateStatus = async (id, newStatus) => {
     let input = {
         TableName: "Tasks",

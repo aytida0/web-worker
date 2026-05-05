@@ -1,5 +1,6 @@
 import {nanoid} from 'nanoid';
 import { listItems, putItem, getItem, deleteItem, createTable } from '../model/tasks.js';
+import { sendToQueue } from '../model/queue.js';
 
 const getTasks = async (req, res) => {
     // Logic to retrieve tasks from the database 
@@ -15,22 +16,20 @@ const createTask = async (req, res) => {
     // Logic to create a new task
     const taskId = nanoid(10);
     const task = {
-        TableName: "Tasks",
-        Item: {
-            taskId: taskId,
-            type: req.body.type || "send_email",
-            payload: {
-                to: req.body.toEmail || "email",
-                subject: req.body.subject || "Default Subject",
-                msg: req.body.msg || "Message Body",
-            },
-            priority: req.body.priority || "default",
-            status: "pending",
-        }
+        taskId: taskId,
+        type: req.body.type || "send_email",
+        payload: {
+            to: req.body.toEmail || "email",
+            subject: req.body.subject || "Default Subject",
+            msg: req.body.msg || "Message Body",
+        },
+        priority: req.body.priority || "default",
+        status: "pending",
     }
 
     try {
         const response = await putItem(task);
+        await sendToQueue(task);
         res.status(201).send({"Task Id": taskId, "Response": response});
     } catch (error) {
         console.log(error)

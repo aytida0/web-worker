@@ -1,3 +1,5 @@
+// not used now as queue is now used for sending and receiving messages (tasks)
+
 import { getPendingTasks, getFailedTasks, updateStatus } from "./queue/dynamoQueue.js";
 import handlers from "./handlers/index.js";
 
