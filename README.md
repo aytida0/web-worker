@@ -42,16 +42,16 @@ It focuses on:
 
 - Job Lifecycle Tracking  
   Tracks job states such as:
-  - Created  
+  - Pending
   - Processing  
   - Completed  
   - Failed  
 
 ---
 
-## Architecture
+## Example Flow
 
-id="arch1" Client → API → Queue (Azure Service Bus) → Worker → Task Execution
+Client → API → Queue (Azure Service Bus) → Worker → Task Execution
 
 ---
 
@@ -70,12 +70,6 @@ id="arch1" Client → API → Queue (Azure Service Bus) → Worker → Task Exec
 3. The worker consumes the job from the queue  
 4. The worker processes the task  
 5. The job status is updated  
-
----
-
-## Example Flow
-
-id="flow1" Create Job → API → Queue → Worker → Completed
 
 ---
 
